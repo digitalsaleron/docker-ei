@@ -13,7 +13,7 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: digitalsaleron/wso2am
+  IMAGE_NAME: digitalsaleron/wso2mi-dashboard
 
 
 
@@ -68,7 +68,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
-          context: ./dockerfiles/ubuntu/apim
+          context: ./dockerfiles/ubuntu/mi-dashboard
           push: ${{ github.event_name != 'push tag' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
